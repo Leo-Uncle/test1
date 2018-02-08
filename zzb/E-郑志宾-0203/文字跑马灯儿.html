@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>文字跑马灯儿</title>
+	<style type="text/css">
+		#box{
+			width: 209px;
+
+			/*border: 1px solid #000;*/
+			white-space:nowrap;
+			overflow: hidden;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<p id="mes">老师不认真讲课就是王八蛋，学生不认真学习就是耍流氓。</p>
+	</div>	
+</body>
+
+<script type="text/javascript">
+	var box = document.getElementById('box');
+	var mes = document.getElementById('mes');	
+	//console.log(mes.innerHTML);
+	var timer = setInterval(function(){
+		box.scrollLeft+=15;
+		var str = mes.innerHTML;
+		// mes.innerHTML = str.substr(1) + str[0];
+		var arr = str.split('');
+		var f = arr.shift();
+		arr.push(f);
+		mes.innerHTML = arr.join('');
+		// console.log(arr);
+	},500);
+	
+</script>
+</html>

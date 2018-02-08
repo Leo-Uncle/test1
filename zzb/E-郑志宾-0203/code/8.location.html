@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css"></style>
+</head>
+<body>
+    <h1>location</h1>
+    <hr>
+
+    <button onclick="location.assign('http://www.jd.com')">assign</button>
+    <button onclick="location.replace('http://www.taobao.com')">replace</button>
+    <button onclick="location.href='http://www.qq.com'">href</button>
+
+    <script>
+    // console.log(location);
+    console.log('URL:' , location.href);
+    console.log('主机名和端口号:' , location.host);
+    console.log('主机名:' , location.hostname);
+    console.log('协议:' , location.protocol);
+    console.log('pathname:' , location.pathname);
+    console.log('search:' , location.search);
+    console.log('hash:' , location.hash);
+
+    // location.href = 'http://www.huaban.com';
+    // location.search = '?num=99';
+    // location.hash = '#kk=1';
+
+    </script>
+</body>
+</html>

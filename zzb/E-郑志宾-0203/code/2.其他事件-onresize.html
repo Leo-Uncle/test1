@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css"></style>
+</head>
+<body>
+    <h1>onresize 事件</h1>
+    <hr>
+    <div id="box"></div>
+
+    <script>
+    window.onresize = function () {
+        box.innerHTML = Math.random();
+
+        // 随机背景色
+        // RGB(0,0,255);
+        // var r = Math.floor(Math.random() * 10000 % 256);
+        // var g = Math.floor(Math.random() * 10000 % 256);
+        // var b = Math.floor(Math.random() * 10000 % 256);
+        // document.body.style.backgroundColor = 'rgb('+r+','+g+','+b+')';
+
+        // 16进制  0~9a~f
+        // #000000 ~ #ffffff
+        var color = '#' + Math.floor(Math.random() * 16777215).toString(16);
+        document.body.style.backgroundColor = color;
+        console.log(color);
+    }
+    </script>
+</body>
+</html>

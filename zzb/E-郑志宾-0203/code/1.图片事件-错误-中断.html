@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        #imglist img{
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>图片事件 onerror</h1>
+    <hr>
+
+    <div id="imglist">
+        <img src="./imgs/Meinv001.jpg">
+        <img src="./imgs/Meinv002.jpg">
+        <img src="./imgs/Meinv004643648.jpg">
+        <img src="./imgs/Meinv003.jpg">
+        <img src="./imgs/Meinv004.jpg">
+        <img src="./imgs/Meinv0024244.jpg">
+        <img src="./imgs/Meinv005.jpg">
+        <img src="./imgs/Meinv006.jpg">
+        <img src="./imgs/Meinv0042346.jpg">
+        <img src="./imgs/Meinv007.jpg">
+        <img src="./imgs/Meinv0042346.jpg">
+        <img src="./imgs/Meinv008.jpg">
+        <img src="./imgs/Meinv009.jpg">
+        <img src="./imgs/Meinv004643648.jpg">
+        <img src="./imgs/Meinv010.jpg">
+    </div>
+
+    <script>
+    var imgs = document.getElementById('imglist').getElementsByTagName('img');
+
+    // 给每张图片表单onerror事件
+    for (var i = 0; i < imgs.length; i++) {
+        imgs[i].onerror = function () {
+            this.src = './imgs/error.jpg';
+        }
+    }
+    </script>
+</body>
+</html>

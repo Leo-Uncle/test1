@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css"></style>
+</head>
+<body>
+    <h1>window</h1>
+    <hr>
+
+    <button onclick="window.open()">open</button>
+    <button onclick="window.open('http://www.baidu.com')">百度</button>
+    <button onclick="window.open('http://www.itxdl.cn', 'yy')">ITXDL</button>
+    <button onclick="window.open('http://www.itxdl.cn', '', 'width=300,height=600')">ITXDL(指定大小)</button>
+
+    <button  onclick="window.print()">打印</button>
+
+    <script>
+        window.name = 'yy';
+
+    // 自定义对象
+    var obj = {name:'艳艳'};
+    console.log(obj);
+    console.log(window.obj);
+
+    // 变量
+    var a = 100;
+    console.log(window.a);
+
+    // 函数
+    function demo() {
+        console.log('呆毛....');
+        // console.log(this);
+    }
+    demo();
+    window.demo();
+
+
+    // alert()    警告框
+    // var a = alert('警告框');
+    // console.log(a);
+
+    // confirm()  确认框
+    // var b = confirm('你确认吗?');
+    // console.log(b);
+    // prompt()   输入框
+    // var c = prompt('请输入您的银行卡密码:');
+    // console.log(c);
+    
+
+
+    </script>
+</body>
+</html>

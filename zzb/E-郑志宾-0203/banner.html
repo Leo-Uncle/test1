@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>banner</title>
+	<style type="text/css">
+		.banner{
+			overflow: hidden;
+		}
+		.banner li{
+			float: left;
+			list-style-position: outside;
+			list-style-type: none;
+		}
+		.banner img{
+			width: 300px;
+			height: 200px;
+		}
+		.icon li{
+			list-style: none;
+			float: left;
+			width: 50px;
+			background-color: #def;
+			text-align: center;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+<div>
+	<ul class="banner">
+		<li style="display:block"><a href="#"><img src="img/01.jpg" alt="" ></a></li>
+		<li style="display:none"><a href="#"><img src="img/02.jpg" alt="" ></a></li>
+		<li style="display:none"><a href="#"><img src="img/03.jpg" alt="" ></a></li>
+		<li style="display:none"><a href="#"><img src="img/04.jpg" alt="" ></a></li>
+		<li style="display:none"><a href="#"><img src="img/05.jpg" alt="" ></a></li>
+	</ul>
+	<ul class="icon">
+		<li style="">1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+</div>
+	
+	
+</body>
+<script type="text/javascript">
+	var play = document.getElementsByTagName('div')[0];
+	var banner = document.getElementsByClassName('banner')[0];
+	var icon = document.getElementsByClassName('icon')[0];
+	var ili = icon.getElementsByTagName('li');
+	 console.log(play);
+	var m = 0;
+	var time;
+	function show(m){
+		var lis = banner.getElementsByTagName('li');
+		for(var i = 0; i<lis.length; i++){
+			lis[i].style.display = 'none';						
+		}
+		lis[m].style.display = 'block';
+	}
+
+
+	function icon1(m){
+		var lis = icon.getElementsByTagName('li');
+		for(var i = 0; i<lis.length; i++){
+			lis[i].style.backgroundColor = '#def';						
+		}
+		lis[m].style.backgroundColor = '#fed';
+	}
+
+	function run(){
+		if(m>=5){
+			m = 0;
+		}
+		show(m);
+		icon1(m);
+		m++;
+	}
+
+	play.onmouseover = function(){
+		clearInterval(timer);
+	}
+	play.onmouseout = function(){	
+		timer =  setInterval(run,2000);
+	}
+	
+
+	for (var j = 0; j<ili.length; j++){
+		(function(j){
+			
+			ili[j].onmouseover = function() {
+				//console.log(j);
+				show(j);
+				icon1(j);
+				m= j+1;	
+			};
+		})(j);
+	}	
+		
+	
+
+	var timer =  setInterval(run,2000);
+</script>
+</html>
